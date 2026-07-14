@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion = "[47,)"
+license = "MIT"
+
+[[mods]]
+
+modId="create_void"
+
+version="1.20.1"
+
+displayName="菌染末日"
+
+description='''菌染末日魔改mod'''
+
+[[dependencies.create_void]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.create_void]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="1.20.1"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.create_void]]
+modId="create"
+mandatory=true
+versionRange="[6.0.8,6.1.0)"
+ordering="NONE"
+side="BOTH"

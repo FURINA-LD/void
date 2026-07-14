@@ -1,0 +1,11 @@
+{
+  "itemGroup.create_void_tab": "菌染末日",
+
+  "item.create_void.iron_mechanism": "铁构件",
+  "item.create_void.incomplete_brass_machine": "未完成的黄铜机械",
+
+  "block.create_void.andesite_machine": "安山机械",
+  "block.create_void.copper_machine": "铜机械",
+  "block.create_void.brass_machine": "黄铜机械",
+  "block.create_void.redstone_machine": "红石机械"
+}

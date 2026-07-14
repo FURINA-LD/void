@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "create:propeller"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_void:iron_mechanism"
+    }
+  ]
+}

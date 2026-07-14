@@ -1,0 +1,9 @@
+{
+  "replace": "false",
+  "values": [
+    "create_void:andesite_machine",
+    "create_void:copper_machine",
+    "create_void:brass_machine",
+    "create_void:redstone_machine"
+  ]
+}

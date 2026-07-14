@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "create:display_board"
+    },
+    "*": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    "*#*"
+  ],
+  "result": {
+    "item": "create_void:redstone_machine"
+  },
+  "show_notification": false
+}

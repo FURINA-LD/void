@@ -1,0 +1,11 @@
+{
+  "itemGroup.create_void_tab": "create_void_tab",
+
+  "item.create_void.iron_mechanism": "iron_mechanism",
+  "item.create_void.incomplete_brass_machine": "incomplete_brass_machine",
+
+  "block.create_void.andesite_machine": "andesite_machine",
+  "block.create_void.copper_machine": "copper_machine",
+  "block.create_void.brass_machine": "brass_machine",
+  "block.create_void.redstone_machine": "redstone_machine"
+}
