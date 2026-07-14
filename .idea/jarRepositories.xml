@@ -51,5 +51,10 @@
       <option name="name" value="maven" />
       <option name="url" value="https://maven.azuredoom.com/mods" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="AzureDoom Mods" />
+      <option name="name" value="AzureDoom Mods" />
+      <option name="url" value="https://maven.azuredoom.com/#/mods" />
+    </remote-repository>
   </component>
 </project>
