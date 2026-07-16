@@ -2,6 +2,7 @@ package com.frnc.createvoid.block;
 
 import com.frnc.createvoid.CreateVoid;
 import com.frnc.createvoid.item.ModItems;
+import com.frnc.createvoid.portal.VoidPortal;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -45,6 +46,13 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
                     .strength(0.5f, 3.0f)));
+
+    public static final RegistryObject<Block> VOID_BLOCK =
+            registerBlock("void_block", () -> new VoidPortal(BlockBehaviour.Properties.of()
+                    .sound(SoundType.STONE)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion()
+                    .strength(1.0f, 3.0f)));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

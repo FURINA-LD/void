@@ -40,6 +40,7 @@ public class CreateVoid
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ModDimension.DIMENSION_TYPES.register(context.getModEventBus());
 
 

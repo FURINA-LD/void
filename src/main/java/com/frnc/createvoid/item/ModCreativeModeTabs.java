@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.COPPER_MACHINE.get());
                         output.accept(ModBlocks.BRASS_MACHINE.get());
                         output.accept(ModBlocks.REDSTONE_MACHINE.get());
+                        output.accept(ModBlocks.VOID_BLOCK.get());
                     }).build());
 
     public static void register(IEventBus modEventBus) {

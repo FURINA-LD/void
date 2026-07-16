@@ -34,7 +34,7 @@ public class ModDimension {
                     false,
                     false,
                     true,
-                    10.0,
+                    1.0,
                     true,
                     true,
                     -64,
