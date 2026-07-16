@@ -8,5 +8,7 @@
   "block.create_void.copper_machine": "铜机械",
   "block.create_void.brass_machine": "黄铜机械",
   "block.create_void.redstone_machine": "红石机械",
-  "block.create_void.void_block": "虚空传送符石"
+  "block.create_void.void_block": "虚空传送符石",
+
+  "message.create_void.portal_cooldown": "传送冷却中，剩余 %.1f 秒"
 }

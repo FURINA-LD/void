@@ -8,5 +8,7 @@
   "block.create_void.copper_machine": "copper_machine",
   "block.create_void.brass_machine": "brass_machine",
   "block.create_void.redstone_machine": "redstone_machine",
-  "block.create_void.void_block": "Void Portal"
+  "block.create_void.void_block": "Void Portal",
+
+  "message.create_void.portal_cooldown": "Teleport cooling down, %.1fs remaining"
 }

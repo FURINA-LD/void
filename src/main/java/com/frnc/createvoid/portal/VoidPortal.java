@@ -4,6 +4,7 @@ import com.frnc.createvoid.world.dimension.ModDimension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 public class VoidPortal extends Block {
 
     // 冷却时间（单位：游戏刻，20刻 = 1秒）
-    private static final int COOLDOWN_TICKS = 20;
+    private static final int COOLDOWN_TICKS = 60;
 
     public VoidPortal(Properties properties) {
         super(properties);
@@ -42,14 +44,16 @@ public class VoidPortal extends Block {
         long lastTeleport = persistentData.getLong("lastVoidTeleport");
         long currentTime = level.getGameTime();
         if (currentTime - lastTeleport < COOLDOWN_TICKS) {
-            // 仍在冷却中，直接返回失败（可加提示，这里简单忽略）
+            long remainingTicks = COOLDOWN_TICKS - (currentTime - lastTeleport);
+            serverPlayer.displayClientMessage(
+                    Component.translatable("message.create_void.portal_cooldown", remainingTicks / 20.0), true);
             return InteractionResult.FAIL;
         }
 
         ServerLevel currentLevel = (ServerLevel) level;
 
         // ---- 2. 决定目标维度 ----
-        boolean toVoid = currentLevel.dimension() != ModDimension.VOID_LEVEL_KEY;
+        boolean toVoid = !currentLevel.dimension().equals(ModDimension.VOID_LEVEL_KEY);
         ServerLevel targetLevel = toVoid ?
                 currentLevel.getServer().getLevel(ModDimension.VOID_LEVEL_KEY) :
                 currentLevel.getServer().getLevel(Level.OVERWORLD);
@@ -58,11 +62,15 @@ public class VoidPortal extends Block {
             return InteractionResult.FAIL; // 维度不存在
         }
 
-        // ---- 3. 计算目标坐标 ----
-        int x = pos.getX();
-        int z = pos.getZ();
+        // ---- 3. 计算目标坐标（使用玩家位置，限制在世界边界内） ----
+        WorldBorder border = targetLevel.getWorldBorder();
+        double clampedX = Math.max(border.getMinX() + 1, Math.min(border.getMaxX() - 1, player.getX()));
+        double clampedZ = Math.max(border.getMinZ() + 1, Math.min(border.getMaxZ() - 1, player.getZ()));
+        int x = (int) clampedX;
+        int z = (int) clampedZ;
         int surfaceY = targetLevel.getHeight(Heightmap.Types.WORLD_SURFACE, x, z);
-        BlockPos targetPos = new BlockPos(x, surfaceY + 1, z);
+        // 将传送门放置在目标维度地表处，玩家站在传送门上方
+        BlockPos targetPos = new BlockPos(x, surfaceY, z);
 
         // ---- 4. 智能放置：只在目标位置没有 void_block 时才放置 ----
         BlockState existingState = targetLevel.getBlockState(targetPos);
