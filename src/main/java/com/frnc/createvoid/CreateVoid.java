@@ -3,7 +3,6 @@ package com.frnc.createvoid;
 import com.frnc.createvoid.block.ModBlocks;
 import com.frnc.createvoid.item.ModCreativeModeTabs;
 import com.frnc.createvoid.item.ModItems;
-import com.frnc.createvoid.world.dimension.ModDimension;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -39,10 +38,6 @@ public class CreateVoid
         ModItems.ITEMS.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
-
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModDimension.DIMENSION_TYPES.register(context.getModEventBus());
-
 
 
         // Register ourselves for server and other game events we are interested in

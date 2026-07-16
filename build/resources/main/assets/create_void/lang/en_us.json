@@ -7,5 +7,6 @@
   "block.create_void.andesite_machine": "andesite_machine",
   "block.create_void.copper_machine": "copper_machine",
   "block.create_void.brass_machine": "brass_machine",
-  "block.create_void.redstone_machine": "redstone_machine"
+  "block.create_void.redstone_machine": "redstone_machine",
+  "block.create_void.void_block": "Void Portal"
 }
