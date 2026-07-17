@@ -1,8 +1,10 @@
 package com.frnc.createvoid;
 
 import com.frnc.createvoid.block.ModBlocks;
+import com.frnc.createvoid.fluid.ModFluids;
 import com.frnc.createvoid.item.ModCreativeModeTabs;
 import com.frnc.createvoid.item.ModItems;
+import com.frnc.createvoid.recipe.RecipeTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -38,6 +40,9 @@ public class CreateVoid
         ModItems.ITEMS.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFluids.FLUIDS.register(modEventBus);
+        ModFluids.FLUID_TYPES.register(modEventBus);
+        RecipeTypes.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in

@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "create_void:item/andesite_machine"
-  }
+  "parent": "create_void:block/andesite_machine"
 }

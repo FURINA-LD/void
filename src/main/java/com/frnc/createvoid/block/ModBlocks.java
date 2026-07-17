@@ -1,13 +1,16 @@
 package com.frnc.createvoid.block;
 
 import com.frnc.createvoid.CreateVoid;
+import com.frnc.createvoid.fluid.ModFluids;
 import com.frnc.createvoid.item.ModItems;
 import com.frnc.createvoid.portal.VoidPortal;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -53,6 +56,18 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
                     .strength(1.0f, 3.0f)));
+
+    // 流体方块（不需要 BlockItem，通过水桶放置）
+    public static final RegistryObject<LiquidBlock> KELP_GEL_BLOCK =
+            BLOCKS.register("kelp_gel", () -> new LiquidBlock(
+                    () -> (FlowingFluid) ModFluids.KELP_GEL.get(),
+                    BlockBehaviour.Properties.of()
+                            .noCollission()
+                            .noLootTable()
+                            .strength(100.0F, 3.0F)
+                            .replaceable()
+                            .sound(SoundType.EMPTY)
+            ));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

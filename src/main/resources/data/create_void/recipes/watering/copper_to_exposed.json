@@ -1,0 +1,10 @@
+{
+  "type": "create_void:watering",
+  "ingredients": [
+    {"item": "minecraft:copper_block"},
+    {"fluid": "minecraft:water", "amount": 250}
+  ],
+  "results": [
+    {"item": "minecraft:exposed_copper"}
+  ]
+}
