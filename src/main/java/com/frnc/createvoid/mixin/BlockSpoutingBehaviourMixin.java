@@ -1,6 +1,6 @@
 package com.frnc.createvoid.mixin;
 
-import com.frnc.createvoid.recipe.WateringBehaviour;
+import com.frnc.createvoid.wateringrecipes.WateringBehaviour;
 import com.simibubi.create.api.behaviour.spouting.BlockSpoutingBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;

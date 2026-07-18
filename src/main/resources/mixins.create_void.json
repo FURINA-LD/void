@@ -6,7 +6,8 @@
   "refmap": "create_void.refmap.json",
   "plugin": "com.frnc.createvoid.mixin.MixinPlugin",
   "mixins": [
-    "BlockSpoutingBehaviourMixin"
+    "BlockSpoutingBehaviourMixin",
+    "FluidManipulationBehaviourMixin"
   ],
   "client": [],
   "server": []

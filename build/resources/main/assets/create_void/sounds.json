@@ -1,0 +1,10 @@
+{
+  "la_vaguette": {
+    "sounds": [
+      {
+        "name": "create_void:la_vaguette",
+        "stream": true
+      }
+    ]
+  }
+}

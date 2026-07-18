@@ -1,4 +1,4 @@
-package com.frnc.createvoid.recipe;
+package com.frnc.createvoid.wateringrecipes;
 
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;

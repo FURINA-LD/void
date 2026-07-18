@@ -4,9 +4,10 @@ import com.frnc.createvoid.block.ModBlocks;
 import com.frnc.createvoid.fluid.ModFluids;
 import com.frnc.createvoid.item.ModCreativeModeTabs;
 import com.frnc.createvoid.item.ModItems;
-import com.frnc.createvoid.recipe.RecipeTypes;
+import com.frnc.createvoid.wateringrecipes.RecipeTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +30,11 @@ public class CreateVoid
     public static final String MOD_ID = "create_void";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    /** 快捷创建本 mod 的 ResourceLocation */
+    public static ResourceLocation id(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
 
     public CreateVoid(FMLJavaModLoadingContext context)
     {
